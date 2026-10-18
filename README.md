@@ -1,6 +1,6 @@
 # Startup College Tier List
 
-Which colleges produce the founders of the world's most ambitious, influential and useful companies? An adjustable tier list built from 128 landmark companies and their 261 founders.
+Which colleges produce the founders of the world's most ambitious, influential and useful companies? An adjustable tier list built from 172 landmark companies and their 321 founders, across 144 colleges in 22 countries.
 
 ![The tier list: Stanford and MIT in S tier, Harvard and Berkeley in A](docs/images/tiers.png)
 

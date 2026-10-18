@@ -32,7 +32,7 @@ flowchart LR
 ## Main flows
 
 1. **Load**: `index.html` loads `data.js`, then `scoring.js`, then `app.js` as classic scripts. `app.js` builds the controls, renders the static all-companies table and runs the first `update()`.
-2. **Change a control**: the handler mutates `state` and calls `update()`. That runs `compute(DATA, options())`, syncs the controls, and re-renders the tiers, chart and table. With about 130 companies, this takes well under a frame.
+2. **Change a control**: the handler mutates `state` and calls `update()`. That runs `compute(DATA, options())`, syncs the controls, and re-renders the tiers, chart and table. With about 170 companies, this takes well under a frame.
 3. **Explore a college**: clicking a tier card, chart bar or table row opens a `<dialog>`. It shows the four signals, then each credited company with its founders and how they attended.
 
 ## Scoring
@@ -74,7 +74,7 @@ All data is in `site/data.js`, version-controlled with the code. Nothing is fetc
 
 ## Known limits
 
-- **Sample bias.** About 130 companies, chosen by hand, mostly US-centric and well-known. Colleges outside the US, especially in China and India, are probably under-counted.
+- **Sample bias.** About 170 companies, chosen by hand and well-known. It still leans toward the US: 44 Asian, Israeli and European companies were added on 2026-10-18, but colleges in China, India and continental Europe are probably still under-counted.
 - **Judgment calls.** Impact scores are subjective. Founder lists include the best-documented founders, not every co-founder.
 - **Approximate numbers.** Peak values (market cap, private valuation or acquisition price) and enrollments are rounded figures from public reporting up to late 2025. They are not live.
 - **Edge cases in attribution.** Elon Musk's two years at Queen's University count as "left" and lift Queen's noticeably. His two days at Stanford are deliberately not counted. Turn off "left" to remove dropout and transfer effects.
