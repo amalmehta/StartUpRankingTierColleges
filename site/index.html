@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startup College Tier List</title>
+  <meta name="description" content="Which colleges produce the founders of the world's most ambitious, influential and useful companies? An adjustable tier list.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="wrap hero">
+    <h1>Startup College Tier List</h1>
+    <p class="lede">Which colleges produce the founders of the world's most ambitious, influential and useful companies? Drag the weights and the tiers re-rank instantly.</p>
+    <p class="meta" id="meta"></p>
+  </header>
+
+  <main class="wrap">
+    <section class="panel controls" aria-labelledby="controls-h">
+      <h2 id="controls-h" class="sr-only">Ranking controls</h2>
+      <div class="control-group">
+        <h3>Weights</h3>
+        <div id="weights" class="weights"></div>
+      </div>
+      <div class="control-group">
+        <h3>Founders count when they</h3>
+        <label class="check"><input type="checkbox" data-role="ug" checked> earned an undergraduate degree</label>
+        <label class="check"><input type="checkbox" data-role="grad" checked> earned a graduate degree (MS, MBA, PhD, MD)</label>
+        <label class="check"><input type="checkbox" data-role="left" checked> attended but left (dropouts, transfers)</label>
+        <label class="check split"><input type="checkbox" id="split"> Split each company's credit across its colleges</label>
+      </div>
+      <div class="control-group">
+        <h3>Companies founded</h3>
+        <div class="seg" id="era" role="radiogroup" aria-label="Founding era"></div>
+      </div>
+      <div class="control-group wide">
+        <h3>Sectors <button class="link" id="sectors-all" type="button">all</button></h3>
+        <div class="chips" id="sectors"></div>
+      </div>
+      <div class="control-group wide">
+        <h3>College regions <button class="link" id="regions-all" type="button">all</button></h3>
+        <div class="chips" id="regions"></div>
+      </div>
+      <button class="reset" id="reset" type="button">Reset to defaults</button>
+    </section>
+
+    <section aria-labelledby="tiers-h">
+      <h2 id="tiers-h">The tiers</h2>
+      <p class="sub">Score 100 = the top college under the current weights. Click any college for its companies.</p>
+      <div class="legend" id="region-legend" aria-label="Card edge color = college region"></div>
+      <div id="tiers" class="tiers"></div>
+    </section>
+
+    <section aria-labelledby="chart-h">
+      <h2 id="chart-h">What drives the top 15</h2>
+      <p class="sub">Each bar is a college's score, split into the four signals' weighted contributions.</p>
+      <div class="legend" id="legend"></div>
+      <div class="chart-box" id="chart"></div>
+    </section>
+
+    <section aria-labelledby="table-h">
+      <h2 id="table-h">Full ranking</h2>
+      <div class="table-tools">
+        <input type="search" id="search" placeholder="Find a college or country" aria-label="Find a college or country">
+      </div>
+      <div class="table-scroll">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-sort="rank" class="num">#</th>
+              <th data-sort="name">College</th>
+              <th data-sort="tier">Tier</th>
+              <th data-sort="score" class="num">Score</th>
+              <th data-sort="count" class="num">Companies</th>
+              <th data-sort="impact" class="num">Impact pts</th>
+              <th data-sort="value" class="num">Peak value</th>
+              <th>Best known</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="method-h" class="method">
+      <h2 id="method-h">How it works</h2>
+      <div class="method-grid">
+        <div>
+          <h3>The dataset</h3>
+          <p>A hand-curated list of <span id="n-companies"></span> landmark companies from 1939 to 2023: the most valuable, the category-definers, and the ones that changed daily life. Every founder is linked to each college they attended, marked as an undergraduate degree, a graduate degree, or left without finishing.</p>
+        </div>
+        <div>
+          <h3>The four signals</h3>
+          <ul>
+            <li><b>Value created</b>: sum of log₂(1 + peak value in $B) across alumni companies, so one $3T giant counts about as much as a few $100B companies, not 30 of them.</li>
+            <li><b>Companies</b>: how many landmark companies alumni founded.</li>
+            <li><b>Impact</b>: sum of each company's 1–5 impact score (5 = changed how the world works).</li>
+            <li><b>Per student</b>: impact divided by enrollment (plus a 20,000-student allowance so tiny colleges with one famous founder don't dominate).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Score and tiers</h3>
+          <p>Each signal is scaled so the leader scores 100, then blended with your weights and rescaled so the top college scores 100. Tiers: S ≥ 60, A ≥ 30, B ≥ 15, C ≥ 6, D below.</p>
+          <h3>Read with care</h3>
+          <p>This is a curated sample, not a census: it favours famous, mostly US companies, and impact scores are judgment calls. Correlation isn't causation; elite colleges also select for ambition. Values are approximate as of late 2025.</p>
+        </div>
+      </div>
+      <details class="all-companies">
+        <summary>All <span id="n-companies-2"></span> companies and their founders</summary>
+        <div class="table-scroll"><table id="companies-table"><thead><tr><th>Company</th><th class="num">Founded</th><th>Sector</th><th class="num">Peak value</th><th class="num">Impact</th><th>Founders and colleges</th></tr></thead><tbody></tbody></table></div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap foot">Built from public reporting. Spotted a wrong founder or college? Fix it in <code>site/data.js</code>.</footer>
+
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="dialog-head">
+      <div>
+        <h2 id="detail-title"></h2>
+        <p id="detail-sub" class="sub"></p>
+      </div>
+      <button class="close" id="detail-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="scoring.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

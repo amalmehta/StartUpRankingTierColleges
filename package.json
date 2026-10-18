@@ -1,0 +1,9 @@
+{
+  "name": "startuprankingtiercolleges",
+  "private": true,
+  "description": "Startup College Tier List: which colleges produce the founders of the world's most ambitious companies",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "python3 -m http.server 8765 --directory site"
+  }
+}

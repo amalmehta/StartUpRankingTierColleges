@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8F3EA"/>
+      <stop offset="1" stop-color="#EADFC9"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2463B0"/>
+      <stop offset="1" stop-color="#123F7C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+  <path d="M322 492 L322 650 C322 712 408 762 512 762 C616 762 702 712 702 650 L702 492 L512 580 Z" fill="#1A4F92"/>
+  <path d="M512 262 L862 420 L512 578 L162 420 Z" fill="url(#top)" stroke="url(#top)" stroke-width="28" stroke-linejoin="round"/>
+  <path d="M512 420 L800 450 L800 640" fill="none" stroke="#E9A21A" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M800 610 L838 720 L762 720 Z" fill="#E9A21A" stroke="#E9A21A" stroke-width="22" stroke-linejoin="round"/>
+  <circle cx="512" cy="420" r="26" fill="#E9A21A"/>
+  <path d="M770 150 Q778 202 830 210 Q778 218 770 270 Q762 218 710 210 Q762 202 770 150 Z" fill="#E9A21A"/>
+</svg>
