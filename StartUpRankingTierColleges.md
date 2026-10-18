@@ -67,8 +67,9 @@ Asked and answered (2026-10-15):
 - Publishing: local first; on 2026-10-17 the user asked to push to GitHub (public repo StartUpRankingTierColleges) and host on GitHub Pages via an Actions workflow.
 
 Decided without asking:
-- Dataset: a hand-curated list of landmark companies (1939–2023): 128 at launch, expanded to 172 (321 founders, 144 colleges, 22 countries) on 2026-10-18, compiled from public knowledge up to late 2025. Not a paywalled unicorn database.
+- Dataset: a hand-curated list of landmark companies (1939–2023): 128 at launch, expanded to 172 (321 founders, 151 colleges, 23 countries) on 2026-10-18, compiled from public knowledge up to late 2025. Not a paywalled unicorn database.
 - Expansion (2026-10-18): added 27 Asian, 2 Israeli and 15 European companies. Only founders with well-documented education were included; companies with uncertain founder schools (e.g. Wiz, Adyen, Wise, PhonePe) were left out.
+- Source check (2026-10-18): every founder–college link of the 44 added companies was checked against web sources (company filings and bios, university pages, Wikipedia with citations). Fixed: Ilya Segalovich (Yandex) studied at the Moscow Geological Prospecting Institute, not Gubkin; corrected roles for Su Hua, Daniel Dines, Bastian Nominacher, David Schneider and Frédéric Mazzella; added 11 missing degrees. Judgment calls: Ren Zhengfei kept as an undergraduate degree (Huawei says only "studied at"); German Diplom and BITS integrated M.Sc. kept as undergraduate; non-degree study (exchanges, short courses) left out; Neil Shen's possible Columbia enrolment left out as unconfirmed. The original 128 companies have not been source-checked yet.
 - Credit: a founder credits every college they attended, tagged undergrad, grad or left. Each company counts once per college, at full credit by default. Split credit and the role filters are toggles.
 - Value is log-damped: log2(1 + peak $B). Impact is a 1–5 judgment score. The per-student rate adds a 20,000-student allowance.
 - Tiers are relative to the leader (100): S ≥ 60, A ≥ 30, B ≥ 15, C ≥ 6, D below.
@@ -100,3 +101,4 @@ CHANGELOG:
 - 2026-10-15 — built the website (site/), tests, README and docs; recorded the answered questions and assumptions
 - 2026-10-17 — pushed to GitHub and set up GitHub Pages (Actions workflow deploys site/)
 - 2026-10-18 — expanded the dataset with 44 Asian, Israeli and European companies (172 total)
+- 2026-10-18 — source-checked the 44 added companies; fixed 1 wrong college, 5 roles and 11 missing degrees
