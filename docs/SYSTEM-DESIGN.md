@@ -75,6 +75,7 @@ All data is in `site/data.js`, version-controlled with the code. Nothing is fetc
 ## Known limits
 
 - **Sample bias.** About 170 companies, chosen by hand and well-known. It still leans toward the US: 44 Asian, Israeli and European companies were added on 2026-10-18, but colleges in China, India and continental Europe are probably still under-counted.
+- **Source checking.** The 44 companies added on 2026-10-18 were checked link by link against web sources, which found one wrong college and several wrong roles or missing degrees (all fixed). The original 128 companies have not been checked the same way.
 - **Judgment calls.** Impact scores are subjective. Founder lists include the best-documented founders, not every co-founder.
 - **Approximate numbers.** Peak values (market cap, private valuation or acquisition price) and enrollments are rounded figures from public reporting up to late 2025. They are not live.
 - **Edge cases in attribution.** Elon Musk's two years at Queen's University count as "left" and lift Queen's noticeably. His two days at Stanford are deliberately not counted. Turn off "left" to remove dropout and transfer effects.
